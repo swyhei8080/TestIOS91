@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ViewControllerOne.h"
 
 @interface ViewController ()
 
@@ -20,11 +21,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [NSRunLoop currentRunLoop];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)tap:(id)sender
+{
+    ViewControllerOne *one = [[ViewControllerOne alloc] initWithNibName:@"ViewControllerOne" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:one];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end
